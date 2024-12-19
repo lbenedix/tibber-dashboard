@@ -35,6 +35,10 @@ export async function fetchTibberData(token: string) {
     body: JSON.stringify({ query }),
   });
 
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
   const data = await response.json();
   const home = data.data.viewer.homes[0];
   const prices = home.currentSubscription.priceInfo.today.map((price) => ({
