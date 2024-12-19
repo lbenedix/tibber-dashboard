@@ -10,7 +10,7 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
 - Minimalist black & white design optimized for e-ink displays
 - Uses [Satori](https://github.com/vercel/satori) to generate PNGs server-side
 
-[!Screenshot](./screenshot.jpg)
+![Screenshot](./screenshot.jpg)
 
 ## Setup
 
