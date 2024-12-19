@@ -17,7 +17,7 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/tibber-dashboard.git
+   git clone https://github.com/fgnass/tibber-dashboard.git
    cd tibber-dashboard
    ```
 
