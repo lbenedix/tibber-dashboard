@@ -1,21 +1,31 @@
+import path from "path";
+import { promises as fs } from "fs";
+
 import { ImageResponse } from "@vercel/og";
 import { fetchTibberData } from "@/src/tibber";
 import { PriceIcon } from "@/src/icons";
 import { ValueDisplay } from "@/src/ValueDisplay";
 
-const fontBold = fetch(
-  new URL("/public/Inter_18pt-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+// Remove edge runtime directive
 
-const fontExtraLight = fetch(
-  new URL("/public/Inter_18pt-ExtraLight.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+async function loadFonts() {
+  const fontBold = await fs.readFile(
+    path.join(process.cwd(), "fonts/Inter_18pt-Bold.ttf")
+  );
+  const fontExtraLight = await fs.readFile(
+    path.join(process.cwd(), "fonts/Inter_18pt-ExtraLight.ttf")
+  );
+  return { fontBold, fontExtraLight };
+}
 
 export async function GET() {
-  const tibberData = await fetchTibberData();
+  const [tibberData, fonts] = await Promise.all([
+    fetchTibberData(),
+    loadFonts(),
+  ]);
+
   const currentPower = tibberData.consumption.at(-1)?.y;
   const currentPrice = Math.round(tibberData.currentPrice * 100);
-  const priceLevel = tibberData.currentLevel;
 
   return new ImageResponse(
     (
@@ -41,7 +51,7 @@ export async function GET() {
             label="Strompreis"
             value={currentPrice}
             unit="Cent"
-            icon={<PriceIcon level={priceLevel} />}
+            icon={<PriceIcon level={tibberData.currentLevel} />}
             data={tibberData.prices}
             showCurrentTime={true}
             scale={100}
@@ -63,12 +73,12 @@ export async function GET() {
       fonts: [
         {
           name: "Inter",
-          data: await fontBold,
+          data: fonts.fontBold,
           weight: 700,
         },
         {
           name: "Inter",
-          data: await fontExtraLight,
+          data: fonts.fontExtraLight,
           weight: 200,
         },
       ],
