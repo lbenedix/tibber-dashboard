@@ -17,9 +17,9 @@ async function loadFonts() {
 
 export async function GET(
   _request: Request,
-  context: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
-  const { token } = await context.params;
+  const { token } = await params;
   const [tibberData, fonts] = await Promise.all([
     fetchTibberData(token),
     loadFonts(),
