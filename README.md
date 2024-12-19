@@ -27,13 +27,7 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
    npm install
    ```
 
-3. Create a `.env.local` file with your Tibber API token:
-
-   ```
-   TIBBER_API_TOKEN=your-token-here
-   ```
-
-   You can get your token from [developer.tibber.com](https://developer.tibber.com)
+3. Get your Tibber API token from [developer.tibber.com](https://developer.tibber.com)
 
 4. Start the development server:
 
@@ -41,7 +35,7 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
    npm run dev
    ```
 
-5. Open http://localhost:3000/dashboard.png in your browser
+5. Open http://localhost:3000/YOUR-TOKEN/dashboard.png in your browser, replacing `YOUR-TOKEN` with your actual Tibber API token.
 
 ## License
 

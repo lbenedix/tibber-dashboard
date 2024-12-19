@@ -1,12 +1,9 @@
 import path from "path";
 import { promises as fs } from "fs";
-
 import { ImageResponse } from "@vercel/og";
 import { fetchTibberData } from "@/src/tibber";
-import { PriceIcon } from "@/src/icons";
+import { PriceIcon } from "@/src/PriceIcon";
 import { ValueDisplay } from "@/src/ValueDisplay";
-
-// Remove edge runtime directive
 
 async function loadFonts() {
   const fontBold = await fs.readFile(
@@ -18,9 +15,13 @@ async function loadFonts() {
   return { fontBold, fontExtraLight };
 }
 
-export async function GET() {
+export async function GET(
+  _request: Request,
+  context: { params: { token: string } }
+) {
+  const { token } = await context.params;
   const [tibberData, fonts] = await Promise.all([
-    fetchTibberData(),
+    fetchTibberData(token),
     loadFonts(),
   ]);
 
