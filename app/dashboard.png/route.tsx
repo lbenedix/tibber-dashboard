@@ -3,8 +3,6 @@ import { fetchTibberData } from "@/src/tibber";
 import { PriceIcon } from "@/src/icons";
 import { ValueDisplay } from "@/src/ValueDisplay";
 
-export const runtime = "edge";
-
 const fontBold = fetch(
   new URL("/public/Inter_18pt-Bold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
