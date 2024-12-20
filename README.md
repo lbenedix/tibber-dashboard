@@ -8,7 +8,6 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
 - Current and upcoming electricity prices
 - Price level indicator (very cheap to very expensive)
 - Minimalist black & white design optimized for e-ink displays
-- Uses [Satori](https://github.com/vercel/satori) to generate PNGs server-side
 
 ![Screenshot](./screenshot.jpg)
 

@@ -7,6 +7,7 @@ export function PriceIcon({ level }: { level: string }) {
         <svg
           width={size}
           height={size}
+          viewBox="0 0 88 88"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -26,6 +27,7 @@ export function PriceIcon({ level }: { level: string }) {
         <svg
           width={size}
           height={size}
+          viewBox="0 0 88 88"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -45,6 +47,7 @@ export function PriceIcon({ level }: { level: string }) {
         <svg
           width={size}
           height={size}
+          viewBox="0 0 88 88"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -64,6 +67,7 @@ export function PriceIcon({ level }: { level: string }) {
         <svg
           width={size}
           height={size}
+          viewBox="0 0 88 88"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -83,6 +87,7 @@ export function PriceIcon({ level }: { level: string }) {
         <svg
           width={size}
           height={size}
+          viewBox="0 0 88 88"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
