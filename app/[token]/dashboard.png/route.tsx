@@ -32,45 +32,55 @@ export async function GET(
     (
       <div
         style={{
-          width: "800px",
-          height: "600px",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          backgroundColor: "white",
-          fontFamily: "Inter",
+          width: "600px",
+          height: "800px",
+          backgroundColor: "lime",
         }}
       >
         <div
           style={{
+            width: "800px",
+            height: "600px",
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
-            gap: "40px",
+            backgroundColor: "white",
+            fontFamily: "Inter",
+            transform: "translate(-100px, 100px) rotate(-90deg)",
           }}
         >
-          <ValueDisplay
-            label="Strompreis"
-            value={currentPrice}
-            unit="Cent"
-            icon={<PriceIcon level={tibberData.currentLevel} />}
-            data={tibberData.prices}
-            showCurrentTime={true}
-            scale={100}
-            chartUnit="ct"
-          />
-          <ValueDisplay
-            label="Verbrauch"
-            value={Math.round(currentPower * 1000)}
-            unit="Watt"
-            data={tibberData.consumption}
-            chartUnit="kWh"
-          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "40px",
+            }}
+          >
+            <ValueDisplay
+              label="Strompreis"
+              value={currentPrice}
+              unit="Cent"
+              icon={<PriceIcon level={tibberData.currentLevel} />}
+              data={tibberData.prices}
+              showCurrentTime={true}
+              scale={100}
+              chartUnit="ct"
+            />
+            <ValueDisplay
+              label="Verbrauch"
+              value={Math.round(currentPower * 1000)}
+              unit="Watt"
+              data={tibberData.consumption}
+              chartUnit="kWh"
+            />
+          </div>
         </div>
       </div>
     ),
     {
-      width: 800,
-      height: 600,
+      width: 600,
+      height: 800,
       fonts: [
         {
           name: "Inter",
