@@ -32,8 +32,8 @@ export async function GET(
   const svg = await satori(
     <div
       style={{
-        width: "800px",
-        height: "600px",
+        width: "500px",
+        height: "500px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -58,18 +58,18 @@ export async function GET(
           scale={100}
           chartUnit="ct"
         />
-        <ValueDisplay
-          label="Verbrauch"
-          value={Math.round(currentPower * 1000)}
-          unit="Watt"
-          data={tibberData.consumption}
-          chartUnit="kWh"
-        />
+        {/*<ValueDisplay*/}
+        {/*  label="Verbrauch"*/}
+        {/*  value={Math.round(currentPower * 1000)}*/}
+        {/*  unit="Watt"*/}
+        {/*  data={tibberData.consumption}*/}
+        {/*  chartUnit="kWh"*/}
+        {/*/>*/}
       </div>
     </div>,
     {
-      width: 800,
-      height: 600,
+      width: 500,
+      height: 500,
       fonts: [
         {
           name: "Inter",
@@ -86,7 +86,7 @@ export async function GET(
   );
 
   const pngBuffer = await sharp(Buffer.from(svg))
-    .rotate(-90)
+    // .rotate(-90)
     .removeAlpha()
     .toColourspace("b-w")
     .toFormat("png", { bitdepth: 8 })
