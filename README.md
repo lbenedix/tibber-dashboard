@@ -9,7 +9,7 @@ A minimalist e-ink friendly dashboard that displays Tibber power consumption and
 - Price level indicator (very cheap to very expensive)
 - Minimalist black & white design optimized for e-ink displays
 
-![Screenshot](./screenshot.jpg)
+![Screenshot](./screenshot.png)
 
 ## Setup
 
