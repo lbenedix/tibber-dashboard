@@ -44,7 +44,7 @@ export function ValueDisplay({
           marginBottom: icon ? "32px" : "44px",
           fontSize: "36px",
           gap: "6px",
-          color:"hotpink",
+          color:"white",
         }}
       >
         {icon && <span style={{ marginRight: "6px" }}>{icon}</span>}

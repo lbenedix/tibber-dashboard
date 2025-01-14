@@ -94,7 +94,7 @@ export function Chart({
               y1={0}
               x2={currentX}
               y2={height}
-              stroke="white"
+              stroke="rgb(68 115 158)"
               strokeWidth="3"
               strokeDasharray="4,4"
             />

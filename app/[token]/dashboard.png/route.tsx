@@ -88,7 +88,7 @@ export async function GET(
   const pngBuffer = await sharp(Buffer.from(svg))
     // .rotate(-90)
     .removeAlpha()
-    .toColourspace("b-w")
+    // .toColourspace("b-w")
     .toFormat("png", { bitdepth: 8 })
     .toBuffer();
 
