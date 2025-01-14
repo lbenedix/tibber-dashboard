@@ -9,6 +9,7 @@ interface ValueDisplayProps {
   showCurrentTime?: boolean;
   scale?: number;
   chartUnit?: string;
+  lineColor?: string;
 }
 
 export function ValueDisplay({
@@ -20,6 +21,7 @@ export function ValueDisplay({
   showCurrentTime = false,
   scale = 1,
   chartUnit = "",
+  lineColor = "white",
 }: ValueDisplayProps) {
   return (
     <div
@@ -56,6 +58,7 @@ export function ValueDisplay({
         showCurrentTime={showCurrentTime}
         scale={scale}
         unit={chartUnit}
+        color={lineColor}
       />
     </div>
   );

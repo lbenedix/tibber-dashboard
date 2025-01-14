@@ -5,6 +5,7 @@ interface ChartProps {
   showCurrentTime?: boolean;
   scale?: number;
   unit?: string;
+  color?: string;
 }
 
 export function Chart({
@@ -14,6 +15,7 @@ export function Chart({
   showCurrentTime = false,
   scale = 1,
   unit = "",
+  color="white",
 }: ChartProps) {
   const maxY = Math.max(...data.map((p) => p.y * scale));
   const step = Math.ceil(maxY / 4);
@@ -67,7 +69,7 @@ export function Chart({
         {yLabels.reverse().map((label, i) => (
           <div
             key={i}
-            style={{ fontSize: "12px", color: "white", fontWeight: 200 }}
+            style={{ fontSize: "12px", color: color, fontWeight: 200 }}
           >
             {label === "0" ? "" : label}
           </div>
@@ -83,7 +85,7 @@ export function Chart({
           <polyline
             points={points}
             fill="none"
-            stroke="white"
+            stroke={color}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -113,7 +115,7 @@ export function Chart({
               style={{
                 textAlign: "center",
                 fontSize: "12px",
-                color: "white",
+                color: color,
                 fontWeight: 300,
               }}
             >
