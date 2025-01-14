@@ -1,6 +1,6 @@
 export function PriceIcon({ level }: { level: string }) {
   const size = 56;
-  const color = "currentColor";
+  const color = "hotpink";
   switch (level) {
     case "VERY_CHEAP":
       return (

@@ -37,7 +37,7 @@ export async function GET(
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        backgroundColor: "white",
+        backgroundColor: "#282828",
         fontFamily: "Inter",
       }}
     >
@@ -49,7 +49,7 @@ export async function GET(
         }}
       >
         <ValueDisplay
-          label="Strompreis"
+          label=""
           value={currentPrice}
           unit="Cent"
           icon={<PriceIcon level={tibberData.currentLevel} />}

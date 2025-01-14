@@ -67,7 +67,7 @@ export function Chart({
         {yLabels.reverse().map((label, i) => (
           <div
             key={i}
-            style={{ fontSize: "12px", color: "black", fontWeight: 200 }}
+            style={{ fontSize: "12px", color: "white", fontWeight: 200 }}
           >
             {label === "0" ? "" : label}
           </div>
@@ -83,7 +83,7 @@ export function Chart({
           <polyline
             points={points}
             fill="none"
-            stroke="black"
+            stroke="white"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -94,8 +94,8 @@ export function Chart({
               y1={0}
               x2={currentX}
               y2={height}
-              stroke="#666"
-              strokeWidth="1"
+              stroke="white"
+              strokeWidth="3"
               strokeDasharray="4,4"
             />
           )}
@@ -113,7 +113,7 @@ export function Chart({
               style={{
                 textAlign: "center",
                 fontSize: "12px",
-                color: "black",
+                color: "white",
                 fontWeight: 300,
               }}
             >
