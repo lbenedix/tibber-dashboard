@@ -37,7 +37,7 @@ export async function GET(
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        backgroundColor: "#282828",
+        backgroundColor: "#1c1c1c",
         fontFamily: "Inter",
       }}
     >
