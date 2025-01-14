@@ -58,7 +58,7 @@ export async function GET(
           showCurrentTime={true}
           scale={100}
           chartUnit="ct"
-          lineColor="black"
+          color="black"
         />
         {/*<ValueDisplay*/}
         {/*  label="Verbrauch"*/}

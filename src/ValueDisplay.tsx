@@ -9,7 +9,7 @@ interface ValueDisplayProps {
   showCurrentTime?: boolean;
   scale?: number;
   chartUnit?: string;
-  lineColor?: string;
+  color?: string;
 }
 
 export function ValueDisplay({
@@ -21,7 +21,7 @@ export function ValueDisplay({
   showCurrentTime = false,
   scale = 1,
   chartUnit = "",
-  lineColor = "white",
+  color = "white",
 }: ValueDisplayProps) {
   return (
     <div
@@ -50,15 +50,15 @@ export function ValueDisplay({
         }}
       >
         {icon && <span style={{ marginRight: "6px" }}>{icon}</span>}
-        <span style={{ fontWeight: 700 }}>{value}</span>
-        <span style={{ fontWeight: 200, opacity: 0.6 }}>{unit}</span>
+        <span style={{ fontWeight: 700, color: color }}>{value}</span>
+        <span style={{ fontWeight: 200, opacity: 0.6, color: color }}>{unit}</span>
       </div>
       <Chart
         data={data}
         showCurrentTime={showCurrentTime}
         scale={scale}
         unit={chartUnit}
-        color={lineColor}
+        color={color}
       />
     </div>
   );
