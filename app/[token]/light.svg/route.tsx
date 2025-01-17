@@ -5,6 +5,7 @@ import { fetchTibberData } from "@/src/tibber";
 import { PriceIcon } from "@/src/PriceIcon";
 import { ValueDisplay } from "@/src/ValueDisplay";
 
+
 async function loadFonts() {
   const fontBold = await fs.readFile(
     path.join(process.cwd(), "fonts/Inter_18pt-Bold.ttf")
@@ -25,7 +26,6 @@ export async function GET(
     loadFonts(),
   ]);
 
-  const currentPower = tibberData.consumption.at(-1)?.y;
   const currentPrice = Math.round(tibberData.currentPrice * 100);
 
   const svg = await satori(
@@ -36,7 +36,7 @@ export async function GET(
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        backgroundColor: "#1c1c1c",
+        backgroundColor: "#fff",
         fontFamily: "Inter",
       }}
     >
@@ -56,6 +56,7 @@ export async function GET(
           showCurrentTime={true}
           scale={100}
           chartUnit="ct"
+          color="black"
         />
       </div>
     </div>,
